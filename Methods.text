@@ -1,0 +1,54 @@
+--------
+String--
+--------
+1.split - з рядка в масив; протилежне join(glue).' ' - space(пробел)
+2.to String - перетворює тип даних в рядок,наприклад 123 => '123'
+3.  res.push(str[str.length - 1]);  - отримали останній елемент рядка
+    res.push(str.length - 1); - отримали значення рядка тобто (7 - 1)= 6
+4.endsWith - перевіряє останній символ(boolean); протилежне .startsWith - перевіряє початковий символ(boolean)
+5.trim - removes all leading (at the beginning) and trailing (at the end) space characters.
+6.replace(search,replace) - Шукає перше search і потім замінює його replace.
+                    const message = "You are welcome.";
+                    message.replace(" ", "_"); // "You_are welcome."; (only the first occurrence has been replaced)
+                    console.log(message); // "You are welcome." (original string is not changed)
+6.2.replaceAll() - замінює всі search, на replace.
+
+7.at дозволяє читати символ за індексом (який також може бути від’ємним).
+8.string.substring(indexStart(include()), indexEnd(ignore(optional))) використовується для повернення частини рядка.
+substring - зе частина рядка.Наприклад з 'Hello world' -> взяли 'world'
+--------
+Number--
+--------
+1.toFixed(2) - добавляє нулі до десяткових чисел.
+
+
+
+-------
+Array--
+-------
+9.filter повертає новий масив, який містить всі елементи початкового масиву, для яких функція callback повернула true.
+                    // .filter() ALWAYS returns an array
+                    numbers.filter(function(number) {
+                        return number >= 12;
+                    }); // [14] .filter() always returns an array. Even if it matched one item or no items.
+10.find повертає перший найдений елемент, для якого функція callback поверне true, або undefined, якщо такого елемента немає.
+                    // .find() returns the first match or undefined
+                    numbers.find(function(number) {
+                        return number >= 12;  
+                    }); // 14   якшо б не найшло було б undefined
+11.map повертає новий масив, в якому кожен елемент є результатом виклику функції для кожного елемента вихідного масиву.
+
+12.includes якщо міститься певне значення в масиві true інакше false.(для рядків теж використовується для пошуку підрядків)
+                    const groceries = ["Apple", "Peach", "Tomato"];
+                    groceries.includes("Tomato"); // true
+                    groceries.includes("Bread"); // false
+13.join з масива в рядок
+                    const groceries = ["Apple", "Peach", "Tomato"];
+                    groceries.join("; "); // "Apple; Peach; Tomato"
+                    groceries.join(" . "); // "Apple . Peach . Tomato"
+14.forEach -  ітерує по кожному елементу масиву і виконує певної дії для кожного елементу. 
+Він не повертає нового масиву, а лише виконує задану функцію зворотного виклику(колбек) для кожного елементу масиву.
+---------------
+Basic methods--
+---------------
+slice - створює новий масив(або рядок) на основі існуючого та вертає вибрану частину не змінюючи існуючого масиву(рядка)
