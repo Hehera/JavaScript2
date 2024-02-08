@@ -1,1 +1,175 @@
 
+Reading dynamic property
+Back in the first Objects chapter, we saw that we can use the dot notation to read a property on an object. For example:
+
+const user = {
+    id: 1,
+    name: "Sam Green"
+};
+
+user.id; // 1
+
+For that, you have to use the square brackets as follows:
+
+
+const user = {
+    id: 1,
+    name: "Sam Green",
+    age: 20
+};
+
+const key = "id";
+user[key]; // 1
+
+
+3. const user = {
+    id: 1,
+    name: "Sam Green",
+    age: 20
+};
+
+const keys = Object.keys(user);
+console.log(keys); // ["id", "name", "age"]
+
+Since Object.keys() returns an array, you can use it to loop through every key in the object and get its value dynamically: 
+const settings = {
+    theme: "Dark",
+    version: "2.4.1",
+    beta: false
+};
+const keys = Object.keys(settings);
+console.log(keys); // ["theme", "version", "beta"]
+
+keys.forEach(key => {
+    // log the value of every key dynamically
+    console.log(settings[key]);
+});
+
+4.слід пам'тати про(undefined):
+const person = {
+    id: 1,
+    firstName: "Sam"
+};
+
+person.firstname; // undefined (firstname instead of firstName)
+person.age; // undefined
+4.1
+person.age.toUpperCase(); // ❌ Uncaught TypeError: Cannot read property 'toUpperCase' of undefined
+This is one of the most common errors that you will see in JavaScript. TypeScript does a great job at preventing these kind of errors, though it comes with its own overhead.
+
+It's important to be able to read this error message and understand that the issue is not .toUpperCase() but instead, the expression that came before it person.age.
+That's because you end up calling undefined.toUpperCase() which does not exist.
+
+
+4.2 
+Another note worth mentioning is that when you see [object Object] it means that the .toString() method has been automatically called on an object which will result in [object Object].
+
+So if you see [object Object], it means you tried to use an object in a context that expects a string. For example:
+
+
+const person = {
+    id: 1,
+    firstName: "Sam"
+};
+
+console.log(`Hello ${person}`); // "Hello [object Object]"
+In this case, we should probably replace ${person} with ${person.firstName}.
+
+
+Object shorthand -  debugging tip 
+
+
+const isAdmin = false;
+const darkMode = true;
+
+const settings = {
+    isAdmin,
+    darkMode
+};
+
+console.log(settings); //{isAdmin: false, darkMode: true}
+
+
+Destructuring && Concatenation
+
+Here's how you access some of its properties and create variables out of them:
+
+const id = config.id;
+const isAdmin = config.isAdmin;
+const theme = config.theme;
+
+This can be refactored with object destructuring as follows:
+
+const {id, isAdmin, theme} = config;
+
+
+Destructuring with default value
+
+It's also possible to destructure with a default value, meaning that you can assign a default value 
+to a property if it does not exist in the object you're destructuring from. For example:
+
+const user = {
+    id: 1,
+    name: "Sam"
+};
+
+const {name, isAdmin = false} = user;
+console.log(isAdmin); // false
+
+As you can see, isAdmin defaulted to false because it does not exist on user.
+
+const user = {
+    id: 1,
+    name: "Sam",
+    isAdmin: true
+};
+
+const {name, isAdmin = false} = user;
+console.log(isAdmin); // true
+
+
+Destructure and rename
+const name = "Document title"; // name variable is already declared
+
+const user = {
+    id: 1,
+    name: "Sam",
+    isAdmin: true
+};
+
+// destructure user.name into variable userName
+const {name: userName, isAdmin} = user;
+console.log(userName); // "Sam"
+
+Here's another example where we destructure user.isAdmin into a new variable admin (note that we destructure it and rename it):
+
+const user = {
+    id: 1,  
+    name: "Sam",
+    isAdmin: true
+};
+
+const {id, name, isAdmin: admin} = user;
+// We've renamed isAdmin to admin while destructuring
+console.log(admin); // true
+
+Concatenate objects
+
+
+In some scenarios, you'd like to merge 2 objects together. You can do that using the ... spread operator.
+
+const firstPerson = {
+    name: "Sam",
+    age: 18
+}
+
+const secondPerson = {
+    age: 25,
+    type: "admin"
+}
+
+const mergedObjects = {...firstPerson, ...secondPerson};
+console.log(mergedObjects); // {name: "Sam", age: 25, type: "admin"}
+
+
+
