@@ -134,12 +134,18 @@ function highAndLow(numbers) {
 function descendingOrder(n) {
 return parseInt(n.toString().split('').sort((a,b) => b - a).map(Number).join(''))
 }
-console.log(descendingOrder(123456789))
+// console.log(descendingOrder(123456789))
   
 // 5 Get the Middle Character
 
 function getMiddle(s) {
+   const length = s.length //4
+   const midleIndex = Math.floor(length / 2) //2
+   if (length % 2 === 0) {
+      return s.substring(midleIndex - 1, midleIndex + 1)
+   } else {
+      return s.charAt(midleIndex)
+   }
 }
-console.log(getMiddle(test));//es
+// console.log(getMiddle('test'));//es
 
-// Test.assertEquals(getMiddle("testing"),"t");
