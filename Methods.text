@@ -13,9 +13,19 @@ String--
                     console.log(message); // "You are welcome." (original string is not changed)
 6.2.replaceAll() - замінює всі search, на replace.
 
-7.at дозволяє читати символ за індексом (який також може бути від’ємним).
+7.at дозволяє читати символ за індексом (який також може бути від’ємним).(для масивів також працює)
 8.string.substring(indexStart(include()), indexEnd(ignore(optional))) використовується для повернення частини рядка.
-substring - зе частина рядка.Наприклад з 'Hello world' -> взяли 'world'
+substring - це частина рядка.Наприклад з 'Hello world' -> взяли 'world'
+9.charAt - отримання символу за вказаним індексом.(let str = "Привіт"; let char = str.charAt(0); => П)
+10.indexOf - шукає перше входження підрядку у рядку.
+    const str = "Hello, world!";
+    const index = str.indexOf("world");
+    console.log(index); // Виведе: 7, оскільки слово "world" починається з індексу 7 в рядку "Hello, world!"
+    Ех.2
+    const str = "Hello, world!";
+    const index = str.indexOf("o", 5);
+    console.log(index); // Виведе: 7, оскільки перший символ "o" після індексу 5 знаходиться в позиції 7 рядка "Hello, world!"
+
 --------
 Number--
 --------

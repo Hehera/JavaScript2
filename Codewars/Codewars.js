@@ -149,3 +149,82 @@ function getMiddle(s) {
 }
 // console.log(getMiddle('test'));//es
 
+// 6 List Filtering
+
+function filter_list(l) {
+   return l.filter((item) =>typeof item == 'number')
+}
+// console.log(filter_list([1, 2, 'a', 'b']))
+  
+
+// 7 Mumbling
+
+function accum(s) {
+   let res = ''
+   for (let i = 0; i < s.length; i++) {
+      res += s[i].toUpperCase() + s[i].toLowerCase().repeat(i)
+      if (i !== s.length - 1) {
+         res += '-'
+      }
+   }
+   return res
+
+// return s.split('').map((c,i) => (c.toUpperCase() + c.toUpperCase().repeat(i))).join('-')
+}
+// console.log(accum('abc'))
+
+
+// 8 You're a square!
+
+let isSquare = n => {
+   if (Math.sqrt(n) !== Math.floor(Math.sqrt(n))) {
+      return false
+   }
+   return true
+}
+// console.log(isSquare(26))
+
+// 9 Isograms
+
+function isIsogram(str) {
+   let splited = str.split('')
+   let count = 0
+   let res = []
+
+   for (let i = 0; i < splited.length; i++) {
+      let charLower = splited[i].toLowerCase()
+      if (!res.includes(charLower)) {
+         res.push(charLower)
+      } else {
+         count += 1
+      }
+   }
+   return count > 0 ? false : true
+}
+// console.log(isIsogram('mosejfhwqdO'))//false
+  
+
+// 10 Exes and Ohs
+
+function XO(str) {
+   str = str.toLowerCase()
+   let splited = str.split('')
+   console.log(splited)
+   let resX = 0
+   let resY = 0
+
+   for (let i = 0; i < str.length; i++) {
+      if (str[i] === 'x') {
+         resX += 1
+      } else if (str[i] === 'o') {
+         resY += 1
+      }
+   }
+   return resX === resY ? true : false
+
+//    return str.filter(x => x === 'x').length === str.filter(x => x === 'o').length;
+}
+// console.log(XO('xxooo'))
+
+
+
