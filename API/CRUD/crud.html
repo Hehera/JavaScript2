@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./crud.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <title>CRUD-Todos</title>
+    </head>
+    <body>
+    
+        <div class="container">
+
+            <h1 class="mb-3">Todo List</h1>
+            <div class="row mb-3">
+                <div class="col-auto">
+                    <input id="todoText" type="text" class="form-control" placeholder="new todo">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary" id="addTodo">add</button>
+                </div>
+            </div>
+
+        <div id="todos">
+                <div class="form-check">
+                    <label for="" class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Clean my room
+                    </label>
+                    <button type="button" class="btn-close" aria-label="Close" style="font-size: 10px;"></button>
+                </div>
+        </div>
+
+    </div>
+    
+        <script src="./crud.js"></script>
+    </body>
+    
+    </html>
