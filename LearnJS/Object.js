@@ -140,7 +140,10 @@ const getStatus = (host, user, booking) => {
         canceled: `Unfortunately ${user}, ${host} has canceled your booking request.`,
         done: `${host} hopes you had a great stay.`,
     };
+<<<<<<< HEAD
     
+=======
+>>>>>>> d366e0c (Nulish coalsescing,Optional chaining(advanced))
     return messages[booking.status] ?? "Unknown booking status.";
 }
 
