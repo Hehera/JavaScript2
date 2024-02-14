@@ -1,0 +1,3 @@
+querySelector - шукає всередині документа(треба крапку)
+closest - шукає родителя
+const newItem = document.createElement('li') - создав li

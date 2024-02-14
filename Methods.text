@@ -72,6 +72,11 @@ i - це індекс
 18.reduce - використовується для зменшення масиву до одного значення,тому і reduce.
 Passing 0 as initialValue is the same as declaring let sum = 0 when using .forEach() to calculate the sum.!
 For multiplication, we use an initialValue of 1.
+19.findIndex - повертає індекс першої виконаної умови (true) інакше, повертає - 1:
+                    const numbers = [10, 20, 30, 40, 50];
+                    // Ищем индекс первого числа больше 25
+                    const index = numbers.findIndex(num => num > 25);
+                    console.log(index); // Вывод: 2
 ---------------
 Basic methods--
 ---------------
