@@ -131,3 +131,28 @@ const person = {
 if ("name" in person) {
     // console.log(person.name);
 }
+
+
+const getStatus = (host, user, booking) => {
+    const messages = {
+        pending: `Hey ${user}, we're awaiting confirmation from ${host}.`,
+        confirmed: `Hey ${user}, ${host} is excited to be hosting you.`,
+        canceled: `Unfortunately ${user}, ${host} has canceled your booking request.`,
+        done: `${host} hopes you had a great stay.`,
+    };
+    return messages[booking.status] ?? "Unknown booking status.";
+}
+
+
+
+
+const name = "Sam";
+const number = 0;
+
+if (name) {
+    console.log("First condition");//First condition
+}
+
+if (number) {
+    console.log("second condition")// null
+}

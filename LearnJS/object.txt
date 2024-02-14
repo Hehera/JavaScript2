@@ -73,8 +73,62 @@ user.details?.name?.firstName; // "Sam"
 user.data?.id; // undefined
 
 
+6.Nullish coalescing--коалесин(??)
+
+Основне використання тут полягає в тому, щоб безпечно отримати доступ до властивості,
+яка може бути нульовою, а також мати можливість за замовчуванням використовувати певне значення.
+
+Так само і в Optional chaining має бути визначена змінна,тільки тоді ми можемо це використовувати
+Якщо ліва сторона не виконалась виконується права сторона
+ 
+ const getName = name =>  return name ?? "N/A";
+ console.log(getName(undefined)); // "N/A"
+
+6.1 Operator precedence (пріоритет) 
+const user = {
+     id: 1
+}
+
+const result = 2 + user.age ?? 18;// оператор(+) має більший пріоритет
+console.log(result); // NaN
+
+6.2 Кожного разу, коли ви використовуєте інші оператори в тому самому виразі,щоб уникнути проблем з пріоритетом використовуємо круглі дужки
+    const user = {
+        id: 1
+    }
+
+    const result = 2 + (user.age ?? 18);
+    console.log(result); // 20
 
 
+7.Implicit conversion and falsy values(Неявне перетворення та хибні значення в контексті boolean)
+Автоматично перетворюється на boolean value,коли воно JS очікував boolean value,а прийшло зовсім інше
+const name = "Sam";
+const number = 0;
 
+if (name) {
+    console.log("First condition");
+}
+
+if (number) {
+    console.log("second condition")
+}
+
+Implicit conversion
+Оператор if очікує логічного значення. Однак, коли ви надаєте йому значення іншого типу, воно автоматично перетворює його на логічне значення.
+Це називається неявним перетворенням, оскільки перетворення відбувається автоматично.
+
+Як значення перетворюються на логічні? Хто вирішує, що "Sam" є true, а "" - false, а 30 - true, а 0 - false?
+
+
+Falsy values
+
+ Значення нижче буде перетворено на false, а все інше буде перетворено на true:
+    - false (is already a boolean)
+    - null
+    - undefined
+    - 0
+    - NaN
+    - "" (empty string)  
 
 
