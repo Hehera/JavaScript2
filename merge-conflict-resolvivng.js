@@ -1,2 +1,3 @@
 console.log('merge-conflig-resolving.js file')
-console.log('update 1')
+console.log('Update  file')
+console.log('update 2')
