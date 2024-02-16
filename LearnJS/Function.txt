@@ -55,5 +55,47 @@ const isLegal = (age) => age >= 18;
         return args.reduce((acc, num) => acc + num, 0);
     };
 
+<<<<<<< HEAD
+2.Arrow functions(стрілкові функції)
+Функції ми можемо оголосити вказавши її імя:
+Приклад 1
+function sum(a, b) {
+    return a + b;
+}
+або присвоїти її до змінної та зробити її анонімною:
+Приклад 2
+const sum = function(a, b) {
+    return a + b;
+}
+Щоб зробити функцію стрілковою:
+ 1.Забрати ключове слово function 
+ 2.Добавити = (parameters) => 
 
+2.2 implicit return (неявне повернення)
+Коли ти забув написати в звичайній функції return ми отримуємо undefined,так само і стрілковій,але є випадки 
+коли можемо зробити неявне повернення:
+ 1.Функція має бути стрілочна 2.Видалити фігурні дужки 3.Видалити return
+const isLegal = (age) => age >= 18;
+
+ У стрілкових функціях немає змінної arguments,як у звичайних функціях.
+ Замість цього вони використовують змінну зі списком параметрів(rest parameters).
+
+Приклад 1
+ Звичайна функція з використанням arguments:
+    function sum() {
+        let total = 0;
+        for (let i = 0; i < arguments.length; i++) {
+            total += arguments[i];
+        }
+        return total;
+    }
+    console.log(sum(1, 2, 3, 4)); // Виведе в консоль 10
+
+Тепер подивімося на аналогічний приклад з використанням стрілкової функції:
+    const sumArrow = (...args) => {
+        return args.reduce((acc, num) => acc + num, 0);
+    };
+=======
+
+>>>>>>> d366e0c (Nulish coalsescing,Optional chaining(advanced))
 
